@@ -1,0 +1,506 @@
+<!DOCTYPE html>  
+<html lang="ta">  
+<head>  
+  <meta charset="utf-8" />  
+  <meta name="viewport" content="width=device-width,initial-scale=1" />  
+  <title>Kalvi Vaanam</title>    <!-- ✅ SEO Tamil + English Optimized Meta Tags -->  <meta name="description" content="Kalvi Vaanam – இலவச கல்வி, அறிவு, தொழில்நுட்பம், அறிவியல், கணினி, கோடிங், மற்றும் பல பாடங்களை தமிழில் கற்றுக்கொள்ள உதவும் சிறந்த கல்வி தளம்.   
+Kalvi Vaanam is a Tamil educational platform offering free lessons, science, and technology in Tamil for all learners.">
+<meta name="keywords" content="கல்வி வானம், Kalvi Vaanam, தமிழ் கல்வி தளம், இலவச கல்வி, ஆன்லைன் கல்வி, தமிழ் கற்றல், கல்வி இணையதளம், தொழில்நுட்பம் தமிழில், சயின்ஸ் தமிழில், கோடிங் தமிழில், Free Tamil Learning, Tamil Study Website, Education Website in Tamil, Tamil Knowledge, Learn in Tamil, Tamil Courses, Free Courses Tamil">
+<meta name="author" content="Kalvi Vaanam குழு">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Kalvi Vaanam – தமிழ் கல்வி தளம் | Tamil Educational Website">
+<meta property="og:description" content="இலவச கல்வி, அறிவியல், தொழில்நுட்பம், கோடிங் — எல்லாம் தமிழில். Learn freely in Tamil with Kalvi Vaanam.">
+<meta property="og:image" content="https://kalvivaanam.in/images/og-image.jpg">
+<meta property="og:url" content="https://kalvivaanam.in">
+<meta name="twitter:card" content="summary_large_image">
+
+  <style>  
+    :root {  
+      --accent: #009dff;  
+      --white: #ffffff;  
+      --text: #222;  
+      --sky-light: #e0f7ff;  
+      --blue-bg: #e8f9ff; /* hero blue for green area equivalent */  
+    }  
+  
+    * { box-sizing: border-box; margin: 0; padding: 0; }  
+  
+    body {  
+      background: var(--sky-light);  
+      font-family: "Poppins", Arial, Helvetica, sans-serif;  
+      color: var(--text);  
+    }  
+  
+    header {  
+      height: 90px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      position: relative;  
+      border-bottom: 2px solid rgba(0, 157, 255, 0.4);  
+      background: var(--white);  
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);  
+    }  
+  
+    .sitename {  
+      font-size: 30px;  
+      font-weight: 900;  
+      color: var(--accent);  
+      letter-spacing: 1px;  
+      text-align: center;  
+      line-height: 1.2;  
+    }  
+  
+    .subtitle {  
+      font-size: 13px;  
+      color: #333;  
+      margin-bottom: 4px;  
+      text-align: center;  
+    }  
+  
+    .menu-icon {  
+      position: absolute;  
+      right: 18px;  
+      top: 50%;  
+      transform: translateY(-50%);  
+      font-size: 28px;  
+      cursor: pointer;  
+      color: var(--accent);  
+      user-select: none;  
+    }  
+  
+    .side-overlay {  
+      position: fixed;  
+      top: 0;  
+      left: -100%;  
+      width: 100%;  
+      height: 100%;  
+      background: var(--white);  
+      z-index: 9999;  
+      transition: left 0.3s ease;  
+      display: flex;  
+      flex-direction: column;  
+      padding: 28px;  
+      box-shadow: inset 0 0 15px rgba(0, 157, 255, 0.1);  
+    }  
+  
+    .side-overlay.open { left: 0; }  
+  
+    .side-close {  
+      align-self: flex-end;  
+      font-size: 28px;  
+      cursor: pointer;  
+      color: var(--accent);  
+      margin-bottom: 8px;  
+      font-weight: bold;  
+    }  
+  
+    .side-list {  
+      margin-top: 40px;  
+      display: flex;  
+      flex-direction: column;  
+      gap: 20px;  
+      align-items: center;  
+    }  
+  
+    .side-list a {  
+      text-decoration: none;  
+      color: var(--text);  
+      font-size: 22px;  
+      font-weight: 600;  
+      padding: 10px 30px;  
+      border-radius: 8px;  
+      transition: background 0.3s;  
+    }  
+  
+    .side-list a:hover {  
+      background: rgba(0, 157, 255, 0.1);  
+      color: var(--accent);  
+    }  
+  
+    .header-underline {  
+      position: absolute;  
+      bottom: 8px;  
+      left: 50%;  
+      transform: translateX(-50%);  
+      width: 120px;  
+      height: 4px;  
+      background: var(--accent);  
+      border-radius: 2px;  
+    }  
+  
+    main { min-height: calc(100vh - 90px); }  
+  
+    footer {  
+      background: linear-gradient(90deg, #00b4d8, #90e0ef);  
+      color: white;  
+      padding: 20px 0;  
+      text-align: center;  
+      margin-top: 40px;  
+      font-family: 'Poppins', sans-serif;  
+      border-top-left-radius: 15px;  
+      border-top-right-radius: 15px;  
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);  
+    }  
+  
+    footer a {  
+      color: white;  
+      text-decoration: none;  
+      margin: 0 10px;  
+      font-weight: 500;  
+    }  
+  
+    footer a:hover { text-decoration: underline; }  
+  
+    /* ✅ Classes Popup Style */  
+    #classBox {  
+      display:none;  
+      position: fixed;  
+      top: 50%;  
+      left: 50%;  
+      transform: translate(-50%, -50%);  
+      width: 85%;  
+      max-width: 600px;  
+      height: 420px;  
+      background: white;  
+      border-radius: 18px;  
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);  
+      z-index: 10000;  
+      padding: 25px;  
+      text-align: center;  
+      overflow-y: auto;  
+      animation: pop 0.4s ease;  
+    }  
+  
+    @keyframes pop {  
+      from { transform: translate(-50%, -45%) scale(0.8); opacity: 0; }  
+      to { transform: translate(-50%, -50%) scale(1); opacity: 1; }  
+    }  
+  
+    #classBox button {  
+      border: none;  
+      border-radius: 10px;  
+      background: #e0f7ff;  
+      font-size: 18px;  
+      cursor: pointer;  
+      transition: 0.2s;  
+    }  
+  
+    #classBox button:hover {  
+      background: #009dff;  
+      color: white;  
+    }  
+
+    /* ========== ADDED SEARCH AREA STYLES ========== */
+    .hero-blue {
+      background: var(--blue-bg);
+      padding: 26px 12px 80px 12px; /* big bottom space so search appears inside green area */
+      position: relative;
+      z-index: 1;
+    }
+
+    .search-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 820px;
+      background: #ffffff;
+      border: 3px solid var(--accent);
+      border-radius: 40px;
+      padding: 10px 16px;
+      box-shadow: 0 10px 30px rgba(0,157,255,0.06);
+      display: flex;
+      align-items: center;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: var(--text);
+      background: transparent;
+      padding: 8px 6px;
+    }
+
+    .search-box .search-icon {
+      margin-right: 10px;
+      opacity: 0.9;
+    }
+
+    .results-list {
+      margin: 12px auto 0 auto;
+      max-width: 820px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: none; /* shown only when matches */
+    }
+
+    .result-row {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .result-title {
+      color: var(--text);
+      font-size: 15px;
+      text-decoration: none;
+      flex: 1;
+      margin-right: 12px;
+    }
+
+    .download-btn {
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+    }
+    .download-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+
+    @media (max-width: 520px) {
+      .sitename { font-size: 26px; }
+      .search-box { padding: 8px 12px; border-radius: 32px; }
+      .result-title { font-size: 14px; }
+      .download-btn { padding: 7px 10px; font-size: 14px; }
+    }
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div>  
+      <div class="subtitle">வானத்திற்கு எல்லை இல்லை, அதுபோன்று கல்விக்கும் எல்லை இல்லை</div>  
+      <div class="sitename">KALVI VAANAM</div>  
+    </div>  
+    <div class="menu-icon" id="menuBtn">三</div>  
+    <div class="header-underline"></div>  
+  </header>  
+
+  <!-- ====== GREEN / BLUE AREA (search must be inside this area) ====== -->
+  <section class="hero-blue" aria-label="Hero area for search">
+    <div class="search-wrapper">
+      <div class="search-box" role="search" aria-live="polite" aria-label="Search PDFs">
+        <!-- Search icon -->
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#009dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#009dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="searchInput" type="text" placeholder="Search PDF by name..." aria-label="Search PDF by name" autocomplete="off">
+      </div>
+    </div>
+
+    <!-- Results appear here (inside green/blue area, below search) -->
+    <div class="results-list" id="resultsList" role="list" aria-hidden="true"></div>
+  </section>
+
+  <main></main>  
+
+  <!-- ✅ Side Menu -->  
+  <aside class="side-overlay" id="sideOverlay">  
+    <div class="side-close" id="sideClose">×</div>  
+    <nav class="side-list">  
+      <a href="index.html">Home</a>  
+      <a href="#" onclick="openClassBox()">Classes</a>  
+      <a href="courses/courses.html">Courses</a>  
+      <a href="about.html">About</a>  
+      <a href="Contact.html">Contact</a>  
+      <a href="sitemap.html">Sitemap</a>  
+      <a href="privacy.html">Privacy Policy</a>  
+      <a href="terms.html">Terms & Conditions</a>  
+    </nav>  
+  </aside>  
+
+  <!-- ✅ Classes Popup Box -->  
+  <div id="classBox">  
+    <button onclick="closeClassBox()" style="  
+      float:right;  
+      background:#009dff;  
+      color:white;  
+      border:none;  
+      border-radius:8px;  
+      padding:6px 12px;  
+      font-size:16px;  
+      cursor:pointer;  
+    ">X</button>  
+    <h2 style="color:#009dff;margin-bottom:20px;">Choose Your Class</h2>  
+    <div style="display:flex;flex-direction:column;gap:15px;">  
+      <button onclick="openClass('11th.html')" style="padding:15px;">11th Standard</button>  
+      <button onclick="openClass('12th.html')" style="padding:15px;">12th Standard</button>  
+      <button onclick="openClass('Programming.html')" style="padding:15px;">Programming</button>  
+    </div>  
+  </div>  
+
+  <footer>  
+    <p style="margin: 0; font-weight: 500;">© 2025 Kalvi Vaanam</p>  
+    <p style="margin: 10px 0;">  
+      <a href="index.html">Home</a> |  
+      <a href="about.html">About</a> |  
+      <a href="Contact.html">Contact</a> |  
+      <a href="sitemap.html">Sitemap</a> |  
+      <a href="terms.html">Terms & Conditions</a> |  
+      <a href="privacy.html">Privacy Policy</a>  
+    </p>  
+  </footer>  
+
+  <script>  
+    const menuBtn = document.getElementById("menuBtn");  
+    const side = document.getElementById("sideOverlay");  
+    const sideClose = document.getElementById("sideClose");  
+
+    menuBtn.addEventListener("click", () => side.classList.add("open"));  
+    sideClose.addEventListener("click", () => side.classList.remove("open"));  
+    side.addEventListener("click", (e) => {  
+      if (e.target === side) side.classList.remove("open");  
+    });  
+    document.addEventListener("keydown", (e) => {  
+      if (e.key === "Escape") side.classList.remove("open");  
+    });  
+
+    function openClassBox() {  
+      document.getElementById("classBox").style.display = "block";  
+    }  
+    function closeClassBox() {  
+      document.getElementById("classBox").style.display = "none";  
+    }  
+    function openClass(page) {  
+      window.location.href = page;  
+    }  
+
+    /* ================= SEARCH LOGIC (keyword/partial match) =================
+       - pdf-list.html acts as the database: contains <li data-name="..." data-url="..."> entries
+       - This script fetches that page and builds pdfList automatically (no manual edits needed).
+       - Search behavior:
+         * Case-insensitive.
+         * If the full query string is included in PDF name OR
+           all words in the query appear inside PDF name (tokens) -> match.
+         * That allows users to type simple words like "computer", "science", "computer science", "11th", "midterm", "tamil" etc.
+       - Results shown as: PDF name + blue Download button (opens in new tab).
+    ===================================================================*/
+    let pdfList = [];
+
+    (async function loadPdfDatabase() {
+      try {
+        const res = await fetch('pdf-list.html', {cache: 'no-store'});
+        if (!res.ok) {
+          console.warn('pdf-list.html not found or failed to load:', res.status);
+          return;
+        }
+        const text = await res.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const items = doc.querySelectorAll('#pdflist li');
+
+        items.forEach(li => {
+          const nameAttr = li.getAttribute('data-name');
+          const urlAttr = li.getAttribute('data-url');
+          const a = li.querySelector('a');
+          const name = (nameAttr && nameAttr.trim()) || (a ? a.textContent.trim() : li.textContent.trim());
+          const url = (urlAttr && urlAttr.trim()) || (a ? a.href.trim() : '');
+          if (name && url) {
+            pdfList.push({ name, url, nameLower: name.toLowerCase() });
+          }
+        });
+      } catch (err) {
+        console.error('Error loading pdf database:', err);
+      }
+    })();
+
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('resultsList');
+
+    function clearResults() {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      resultsList.setAttribute('aria-hidden', 'true');
+    }
+
+    function renderResults(matches) {
+      resultsList.innerHTML = '';
+      matches.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'result-row';
+
+        const title = document.createElement('div');
+        title.className = 'result-title';
+        title.textContent = item.name;
+
+        const btn = document.createElement('a');
+        btn.className = 'download-btn';
+        btn.href = item.url;
+        btn.target = '_blank';
+        btn.rel = 'noopener noreferrer';
+        btn.textContent = 'Download';
+
+        row.appendChild(title);
+        row.appendChild(btn);
+        resultsList.appendChild(row);
+      });
+
+      if (matches.length > 0) {
+        resultsList.style.display = 'block';
+        resultsList.setAttribute('aria-hidden', 'false');
+      } else {
+        clearResults();
+      }
+    }
+
+    // match logic: full query included OR all tokens included
+    function keywordMatch(query) {
+      if (!query) return [];
+      const q = query.trim().toLowerCase();
+      const tokens = q.split(/\s+/).filter(Boolean);
+      // return items where either name includes whole query OR every token is included
+      return pdfList.filter(p => {
+        if (p.nameLower.includes(q)) return true;
+        // check all tokens
+        return tokens.every(t => p.nameLower.includes(t));
+      });
+    }
+
+    // show results as user types
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value;
+      if (!val || val.trim() === '') {
+        clearResults();
+        return;
+      }
+      const matches = keywordMatch(val);
+      if (matches.length > 0) renderResults(matches);
+      else clearResults();
+    });
+
+    // Enter: open first match if exists
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const matches = keywordMatch(searchInput.value);
+        if (matches.length > 0) {
+          window.open(matches[0].url, '_blank', 'noopener');
+        }
+      }
+    });
+
+    // hide results when clicking outside
+    document.addEventListener('click', (ev) => {
+      const tgt = ev.target;
+      if (!tgt.closest('.search-box') && !tgt.closest('#resultsList')) {
+        clearResults();
+      }
+    });
+
+    // initial state
+    clearResults();
+  </script>  
+</body>  
+  </html>
