@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes - Kalvi Vaanam</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 50px;
+    }
+    select, a {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 20px;
+    }
+    a {
+      display: block;
+      margin: 20px auto;
+      background: white;
+      color: #2575fc;
+      width: fit-content;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #ffb703;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 Kalvi Vaanam - Classes</h1>
+  <p>உங்கள் வகுப்பை தேர்ந்தெடுக்கவும் 👇</p>
+
+  <select id="classSelect">
+    <option value="">Select Class</option>
+    <option value="class11">11th Standard</option>
+  </select>
+
+  <div id="pdfList"></div>
+
+  <script>
+    const pdfData = {
+      "class11": [
+        {
+          name: "11th Computer Science Quarterly 2025",
+          file: "pdfs/11th_Computer%20science%20Quarterly%20Public%20Examination%202025.pdf"
+        }
+      ]
+    };
+
+    document.getElementById("classSelect").addEventListener("change", function() {
+      const selectedClass = this.value;
+      const pdfListDiv = document.getElementById("pdfList");
+      pdfListDiv.innerHTML = "";
+
+      if (pdfData[selectedClass]) {
+        pdfData[selectedClass].forEach(pdf => {
+          const link = document.createElement("a");
+          link.href = pdf.file;
+          link.target = "_blank";
+          link.textContent = `📄 ${pdf.name} - Open / Download`;
+          pdfListDiv.appendChild(link);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

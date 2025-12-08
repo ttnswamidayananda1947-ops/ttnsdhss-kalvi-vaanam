@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11th Class Groups - Kalvi Vaanam</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #ffffff; /* White background */
+      color: #003366;
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #004b8d;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .group-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .group-item {
+      background: linear-gradient(145deg, #a1c4fd, #c2e9fb);
+      padding: 12px;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(135, 206, 250, 0.4);
+      transition: all 0.3s ease;
+      border: 2px solid #87cefa;
+      animation: glow 2s infinite alternate;
+    }
+
+    .group-item:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #c2e9fb, #a1c4fd);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      display: block;
+    }
+
+    .tamil {
+      font-size: 0.9rem;
+      color: #004b8d;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 8px #a1c4fd, 0 0 15px #87cefa;
+      }
+      to {
+        box-shadow: 0 0 12px #87cefa, 0 0 25px #a1c4fd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>☁️ 11th Class - Group List ☁️</h1>
+
+  <div class="group-list">
+    <div class="group-item">
+      <a href="11th-computer-science.html">
+        Computer Science<br>
+        <span class="tamil">கணினி அறிவியல்</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

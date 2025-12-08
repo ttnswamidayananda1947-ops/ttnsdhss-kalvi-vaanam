@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Kalvi Vaanam</title>
+  <!-- ✅ SEO Tamil + English Optimized Meta Tags -->
+<meta name="description" content="Kalvi Vaanam – இலவச கல்வி, அறிவு, தொழில்நுட்பம், அறிவியல், கணினி, கோடிங், மற்றும் பல பாடங்களை தமிழில் கற்றுக்கொள்ள உதவும் சிறந்த கல்வி தளம். 
+Kalvi Vaanam is a Tamil educational platform offering free lessons, science, coding, and technology in Tamil for all learners.">
+
+<meta name="keywords" content="கல்வி வானம், Kalvi Vaanam, தமிழ் கல்வி தளம், இலவச கல்வி, ஆன்லைன் கல்வி, தமிழ் கற்றல், கல்வி இணையதளம், தொழில்நுட்பம் தமிழில், சயின்ஸ் தமிழில், கோடிங் தமிழில், Free Tamil Learning, Tamil Study Website, Education Website in Tamil, Tamil Knowledge, Learn in Tamil, Tamil Courses, Free Courses Tamil">
+
+<meta name="author" content="Kalvi Vaanam குழு">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Kalvi Vaanam – தமிழ் கல்வி தளம் | Tamil Educational Website">
+<meta property="og:description" content="இலவச கல்வி, அறிவியல், தொழில்நுட்பம், கோடிங் — எல்லாம் தமிழில். Learn freely in Tamil with Kalvi Vaanam.">
+<meta property="og:image" content="https://kalvivaanam.in/images/og-image.jpg">
+<meta property="og:url" content="https://kalvivaanam.in">
+<meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a8e6ff, #e0f7ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .contact-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0077b6;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bcdffb;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+      background-color: #f8fbff;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00b4d8;
+      box-shadow: 0 0 8px #90e0ef;
+      background-color: #ffffff;
+    }
+
+    button {
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0096c7;
+      transform: scale(1.03);
+    }
+
+    #thankyou {
+      display: none;
+      color: #009432;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* 🔹 Simple Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #0077b6;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      color: #0096c7;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Simple Close Button -->
+  <button class="close-btn" onclick="goHome()">×</button>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://formspree.io/f/mvgwvoer" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="thankyou">✅ Your message has been sent successfully. Thank you!</p>
+  </div>
+
+  <script>
+    // 🔹 Close button → redirect to home page
+    function goHome() {
+      window.location.href = "index.html"; // Change to your homepage file name if different
+    }
+
+    // 🔹 Form submit → show thank you message
+    const form = document.getElementById('contact-form');
+    const thankYou = document.getElementById('thankyou');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const action = form.getAttribute('action');
+      const formData = new FormData(form);
+
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(error => {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
+
+</body>
+</html>
