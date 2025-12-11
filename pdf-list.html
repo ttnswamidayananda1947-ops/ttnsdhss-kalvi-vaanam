@@ -1,115 +1,121 @@
-<!DOCTYPE html>
-<html lang="ta">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kalvi Vaanam PDF Database</title>
+<!DOCTYPE html>    
+<html lang="ta">    
+<head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<title>Kalvi Vaanam PDF Database</title>    
+    
+<style>    
+body {    
+    background:#e8f6ff;    
+    font-family: Arial, sans-serif;    
+    padding: 20px;    
+}    
+    
+h2 {    
+    text-align: center;    
+    color:#0077cc;    
+}    
+    
+.pdf-box {    
+    background: white;    
+    padding: 12px;    
+    border-radius: 10px;    
+    margin-bottom: 10px;    
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);    
+}    
+    
+input, button {    
+    padding: 10px;    
+    margin: 5px 0;    
+    width: 100%;    
+    border-radius: 6px;    
+    border: 1px solid #aaa;    
+}    
+    
+button {    
+    background:#0077cc;    
+    color:white;    
+    border:none;    
+    cursor:pointer;    
+}    
+    
+button:hover {    
+    opacity:0.9;    
+}    
+</style>    
+</head>    
+<body>    
+    
+<h2>📚 Kalvi Vaanam – PDF Storage Page</h2>    
+    
+<p>➡ இந்தப் பேஜ் உங்களுக்கே. PDF பெயர் மற்றும் link சேமிக்க மட்டும்.</p>    
+    
+<!-- PDF Add Form -->    
+<input type="text" id="pdfName" placeholder="PDF Name (எ.கா: Chemistry Chapter-1)">    
+<input type="text" id="pdfLink" placeholder="PDF Download Link (PDF URL ஒட்டு)">    
+<button onclick="addPDF()">Add PDF</button>    
+    
+<hr>    
+    
+<!-- PDF List Saved Here -->    
+<ul id="pdflist">    
+    
+    <!-- ⭐ Already Added by Me: PDF #1 -->    
+    <li class="pdf-box" data-name="11th 2nd midterm Tamil examination 2025" data-url="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20Tamil%20examination%20-2025.pdf">    
+        <b>11th 2nd midterm Tamil examination 2025</b><br>    
+        <a href="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20Tamil%20examination%20-2025.pdf" target="_blank">Download</a>    
+    </li>    
+    
+    <!-- ⭐ Already Added by Me: PDF #2 -->    
+    <li class="pdf-box" data-name="11th second midterm English examination 2025" data-url="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20English%20examination-2025.pdf">    
+        <b>11th second midterm English examination 2025</b><br>    
+        <a href="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20English%20examination-2025.pdf" target="_blank">Download</a>    
+    </li>    
 
-<style>
-body {
-    background:#e8f6ff;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
-    color:#0077cc;
-}
-
-.pdf-box {
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-input, button {
-    padding: 10px;
-    margin: 5px 0;
-    width: 100%;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-}
-
-button {
-    background:#0077cc;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-
-button:hover {
-    opacity:0.9;
-}
-</style>
-</head>
-<body>
-
-<h2>📚 Kalvi Vaanam – PDF Storage Page</h2>
-
-<p>➡ இந்தப் பேஜ் உங்களுக்கே. PDF பெயர் மற்றும் link சேமிக்க மட்டும்.</p>
-
-<!-- PDF Add Form -->
-<input type="text" id="pdfName" placeholder="PDF Name (எ.கா: Chemistry Chapter-1)">
-<input type="text" id="pdfLink" placeholder="PDF Download Link (PDF URL ஒட்டு)">
-<button onclick="addPDF()">Add PDF</button>
-
-<hr>
-
-<!-- PDF List Saved Here -->
-<ul id="pdflist">
-
-    <!-- ⭐ Already Added by Me: PDF #1 -->
-    <li class="pdf-box" data-name="11th 2nd midterm Tamil examination 2025" data-url="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20Tamil%20examination%20-2025.pdf">
-        <b>11th 2nd midterm Tamil examination 2025</b><br>
-        <a href="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20Tamil%20examination%20-2025.pdf" target="_blank">Download</a>
-    </li>
-
-    <!-- ⭐ Already Added by Me: PDF #2 -->
-    <li class="pdf-box" data-name="11th second midterm English examination 2025" data-url="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20English%20examination-2025.pdf">
-        <b>11th second midterm English examination 2025</b><br>
-        <a href="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20English%20examination-2025.pdf" target="_blank">Download</a>
-    </li>
-
-</ul>
-
-<script>
-// Load data when page opens
-document.addEventListener("DOMContentLoaded", () => {
-    let saved = localStorage.getItem("pdfDatabase");
-    if (!saved) return;
-    document.getElementById("pdflist").innerHTML = saved;
-});
-
-// Add new PDF item
-function addPDF() {
-    let name = document.getElementById("pdfName").value.trim();
-    let link = document.getElementById("pdfLink").value.trim();
-
-    if (name === "" || link === "") {
-        alert("Please fill both fields!");
-        return;
-    }
-
-    let item = `
-        <li class="pdf-box" data-name="${name}" data-url="${link}">
-            <b>${name}</b><br>
-            <a href="${link}" target="_blank">Download</a>
-        </li>
-    `;
-
-    let list = document.getElementById("pdflist");
-    list.innerHTML += item;
-
-    // Save to local storage
-    localStorage.setItem("pdfDatabase", list.innerHTML);
-
-    document.getElementById("pdfName").value = "";
-    document.getElementById("pdfLink").value = "";
-}
-</script>
-
-</body>
-  </html>
+    <!-- ⭐ Newly added PDF as requested -->    
+    <li class="pdf-box" data-name="11th computer science practical material for Tamil medium our school teacher created this" data-url="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_computer%20science_practical.pdf">    
+        <b>11th computer science practical material for Tamil medium our school teacher created this</b><br>    
+        <a href="https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_computer%20science_practical.pdf" target="_blank">Download</a>    
+    </li>    
+    
+</ul>    
+    
+<script>    
+// Load data when page opens    
+document.addEventListener("DOMContentLoaded", () => {    
+    let saved = localStorage.getItem("pdfDatabase");    
+    if (!saved) return;    
+    document.getElementById("pdflist").innerHTML = saved;    
+});    
+    
+// Add new PDF item    
+function addPDF() {    
+    let name = document.getElementById("pdfName").value.trim();    
+    let link = document.getElementById("pdfLink").value.trim();    
+    
+    if (name === "" || link === "") {    
+        alert("Please fill both fields!");    
+        return;    
+    }    
+    
+    let item = `    
+        <li class="pdf-box" data-name="${name}" data-url="${link}">    
+            <b>${name}</b><br>    
+            <a href="${link}" target="_blank">Download</a>    
+        </li>    
+    `;    
+    
+    let list = document.getElementById("pdflist");    
+    list.innerHTML += item;    
+    
+    // Save to local storage    
+    localStorage.setItem("pdfDatabase", list.innerHTML);    
+    
+    document.getElementById("pdfName").value = "";    
+    document.getElementById("pdfLink").value = "";    
+}    
+</script>    
+    
+</body>    
+</html>
